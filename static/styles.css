@@ -1,4 +1,12 @@
 
+/* Using non-default font, 
+notice this won't be good enough for cross-browser support*/
+@font-face {
+    font-family: 'Kirby-nnGM';
+    src: url('/static/font/Kirby-nnGM.ttf');
+}
+
+/* customized body, card */
 body {
  background: url('/static/pics/dark.jpeg') no-repeat center center fixed;
 background-color: black;
@@ -6,7 +14,7 @@ background-color: black;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  font-family: Times, sans-serif;
+  font-family: 'Kirby-nnGM';
   font-size: 14px;
 }
 h1 {
@@ -26,6 +34,7 @@ h1 {
   font-size: 16px;
 }
 
+/* customized navigation bar */
 .sidebar {font-size: 30px;}
 .nav-link { color: #a46a6a;
 font-size: 25px;}
@@ -33,7 +42,13 @@ font-size: 25px;}
     font-size: 25px;
 }
 
-
+/* customized position, use this as a class */
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width:70%;
+}
+/* customized bottons */
 .btn-primary{
 border-color: #fff;
 }
@@ -42,13 +57,6 @@ border-color: #fff;
     color: #fff;
     background-color:#C75100;
     border-color: #C75100;
-}
-
-
-.center{
-  margin-left: auto;
-  margin-right: auto;
-  width:70%;
 }
 
 .btn-primary:hover{
@@ -60,7 +68,7 @@ border-color: #fff;
   border-color:white;
 }
 
-
+/* customized links */
 a:link {
   color: rgb(199, 81,0);
   background-color: transparent;
@@ -72,32 +80,9 @@ a:visited {
   text-decoration: none;
 }
 
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-  border-color: white;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
-  outline: 0 none;
-}
-
+/* customized forms */
 .form-control{
   background-color: rgba(199,199,188,0.4);
   box-shadow: 0 1px 1px yellow inset, 0 0 8px red;
   outline: 0 none;
-}
-#selfintro{
-  color:rgb(199, 81,0);
 }
