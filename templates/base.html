@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--created by marlene lin>
+<!--flavicon https://favicon.io/emoji-favicons/cigarette/>
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <!-- TinyMCE -->
+        <script src="https://cdn.tiny.cloud/1/if0aley2ohsb5vsey8n0t93s9o10fthesnoprwlrai9l9yn2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+    tinymce.init({
+      selector: '.textarea'
+    });
+  </script>
+        <!-- Bootstrap CSS and my own -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/favicon.ico" rel="icon">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Message bank: {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row header">
+
+            </div>
+            <div class="row">
+               <div class="col-md-1 col-lg-1 col-xl-1"></div>
+               <div class="col-md-3 col-lg-3 col-xl-3 sidebar">
+
+                          <ul class="nav flex-column">
+								<li class="nav-item">
+									<p><i><a class="nav-link" href="/home"><b>Welcome: </b></a></i></p>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/submit">Write a Message</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/view">View messages</a>
+								</li>
+							</ul>
+               </div>
+        <div class="col-md-8 col-lg-8 col-xl-8 maininfo">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block main %}{% endblock %}
+        </div>
+  <div class="col-1"></div>
+           </div>
+           <div class="row">
+               <div class="col footer">
+
+               </div>
+           </div>
+       </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

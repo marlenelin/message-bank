@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Submit
+{% endblock %}
+
+{% block main %}	
+
+<div class="card">
+    <div class="card-header">
+      <i><b>Kirby would appreciate your messages.</b>
+          </div>
+    <div class="card-body">
+        <form method="post">
+            <label for="name">Your name or handle:</label>
+            <input name="name" id="name">
+            <br>
+            <label for="msg">Your message:</label>
+            <input name="msg" id="msg">
+            <br>
+            <br>
+            <input type="submit" value="Submit form">
+        </form>
+    </div>
+</div>
+  <br>
+    {% if name %}
+    Hello <b>{{name}}</b>:
+    <br>
+    Thank you for submitting the form. <br>
+    You can now view messages by going to <a href="/view">View messages</a> or resubmit another message. 
+    {% endif %}
+  <br>
+
+  {% endblock %}
